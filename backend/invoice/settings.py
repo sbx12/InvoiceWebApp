@@ -45,6 +45,7 @@ REST_FRAMEWORK = {
 
 INSTALLED_APPS = [
     'apps.client',
+    'apps.team',
     
     'django.contrib.admin',
     'django.contrib.auth',

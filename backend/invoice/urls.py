@@ -9,6 +9,6 @@ urlpatterns = [
     path('api/v1/', include('djoser.urls.authtoken')),
     
     # Apps URLS
-    path('api/v1/', include('apps.client.urls'))
-    
+    path('api/v1/', include('apps.client.urls')),
+    path('api/v1/', include('apps.team.urls'))
 ]
