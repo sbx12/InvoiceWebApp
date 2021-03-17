@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Dashboard from '../views/dashboard/Dashboard.vue'
 import MyAccount from '../views/dashboard/MyAccount.vue'
+import Clients from '../views/dashboard/Clients.vue'
+import Client from '../views/dashboard/Client.vue'
+import AddClient from '../views/dashboard/AddClient.vue'
+import EditClient from '../views/dashboard/EditClient.vue'
 import SignUp from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
 
@@ -46,7 +50,39 @@ const routes = [
     meta: {
       requireLogin: true
     }
-  }
+  },
+  {
+    path: '/dashboard/clients',
+    name: 'Clients',
+    component: Clients,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/clients/:id',
+    name: 'Client',
+    component: Client,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/clients/add',
+    name: 'AddClient',
+    component: AddClient,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/clients/:id/edit',
+    name: 'EditClient',
+    component: EditClient,
+    meta: {
+      requireLogin: true
+    }
+  },
 ]
 
 const router = createRouter({
