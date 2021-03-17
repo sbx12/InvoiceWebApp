@@ -23,7 +23,7 @@
                 <table class="table is-fullwidth">
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td>ID</td>
                             <td>Title</td>
                             <td>Quantity</td>
                             <td>Amount</td>
@@ -31,7 +31,7 @@
                     </thead>
 
                     <tbody>
-                        <tr v-for="item in items" v-bind:key="item.id">
+                        <tr v-for="item in invoice.items" v-bind:key="item.id">
                             <td>{{ item.id }}</td>
                             <td>{{ item.title }}</td>
                             <td>{{ item.quantity }}</td>
@@ -68,22 +68,9 @@ export default {
                     console.log(JSON.stringify(error))
                 })
         },
-        getItems() {
-            const invoiceID = this.$route.params.id
-
-            axios
-                .get(`/api/v1/items/?invoice_id=${invoiceID}`)
-                .then(response => {
-                    this.items = response.data
-                })
-                .catch(error => {
-                    console.log(JSON.stringify(error))
-                })
-        }
     },
     async mounted() {
         await this.getInvoice()
-        await this.getItems()
     },
 
 }
