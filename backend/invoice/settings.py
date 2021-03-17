@@ -45,6 +45,7 @@ REST_FRAMEWORK = {
 
 INSTALLED_APPS = [
     'apps.client',
+    'apps.invoices',
     'apps.team',
     
     'django.contrib.admin',
