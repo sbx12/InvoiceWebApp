@@ -78,6 +78,7 @@
 
 <script>
 import axios from 'axios'
+import { toast } from 'bulma-toast'
 
 export default {
     name: 'EditClient',
@@ -105,6 +106,14 @@ export default {
             axios
                 .patch(`/api/v1/clients/${clientID}/`, this.client)
                 .then(response => {
+                    toast({
+                        message: 'The changes was saved',
+                        type: 'is-success',
+                        dismissible: true,
+                        pauseOnHover: true,
+                        duration: 2000,
+                        position: 'bottom-right',
+                    })
                     this.$router.push('/dashboard/clients')
                 })
                 .catch(error => {
