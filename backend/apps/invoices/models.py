@@ -34,6 +34,7 @@ class Invoice(models.Model):
     is_sent = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False) 
     
+    bankaccount = models.CharField(max_length=255, blank=True, null=True)
     gross_amount = models.DecimalField(max_digits=6, decimal_places=2)
     vat_amount = models.DecimalField(max_digits=6, decimal_places=2)
     net_amount = models.DecimalField(max_digits=6, decimal_places=2)

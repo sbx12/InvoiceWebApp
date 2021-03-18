@@ -13,6 +13,7 @@ class ItemSerialzier(serializers.ModelSerializer):
 
 class InvoiceSerialzier(serializers.ModelSerializer):
     items = ItemSerialzier(many=True)
+    bankaccount = serializers.CharField(required=False)
     
     class Meta:
         model = Invoice
