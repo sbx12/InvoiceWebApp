@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from apps.client.models import Client
 from apps.team.models import Team
+from _datetime import timedelta
 
 class Invoice(models.Model):
     INVOICE = 'invoice'
@@ -55,6 +56,12 @@ class Invoice(models.Model):
         
     def __str__(self):
         return '%s' % self.invoice_number
+    
+    def get_due_date(self):
+        return self.created_at + timedelta(days=self.due_days)
+    
+    def get_date_formatted(self):
+        return self.get_due_date().strftime("%d.%m.%Y")
     
 
 class Item(models.Model):
