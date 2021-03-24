@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Team(models.Model):
-    name = models.CharField(max_length=255ls)
+    name = models.CharField(max_length=255)
     org_numer = models.CharField(max_length=255, blank=True, null=True)
     first_invoice_number = models.IntegerField(default=1)
     bankaccount = models.CharField(max_length=255, blank=True, null=True)
